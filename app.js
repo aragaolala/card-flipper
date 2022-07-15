@@ -1,8 +1,21 @@
-const setBg = () => {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    document.body.style.backgroundColor = "#" + randomColor;
-    color.innerHTML = "#" + randomColor;
-  }
-  
-  genNew.addEventListener("click", setBg);
-  setBg();
+const colorChange = document.getElementById('change-btn')
+const nameTextColor = document.getElementById('change-text')
+const body = document.body;
+
+
+function randomColor(){
+    return Math.floor(Math.random()*255);
+}
+
+colorChange.addEventListener('click',bgColor)
+
+function bgColor(){
+    const color1 = randomColor();
+    const color2 = randomColor();
+    const color3 = randomColor();
+
+    const rgbString = `rgb(${color1},${color2},${color3})`
+
+    body.style.background = rgbString;
+    nameTextColor.innerText = rgbString;
+}
